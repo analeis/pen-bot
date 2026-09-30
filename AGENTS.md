@@ -7,11 +7,9 @@ cannot tell you:
   Conventional Commits format.
 - [AI_POLICY.md](AI_POLICY.md) — disclosure and the `Assisted-by:` trailer for
   tool-assisted work. Applies to agent-written code.
-- [DOCUMENTATION.md](DOCUMENTATION.md) — **not on `main` yet.** Both this file and
-  `CONTRIBUTING.md` link it, but it currently exists only on the local `docs`
-  branch (`git show docs:DOCUMENTATION.md`). It holds the Go doc comment rules CI
-  does not check. Read it before adding exported identifiers; expect the link to
-  404 until `docs` merges.
+- [DOCUMENTATION.md](DOCUMENTATION.md) — how documentation is written, which
+  content belongs where, and the Go doc comment rules CI does not check. Read it
+  before adding exported identifiers.
 
 ## Verify
 
@@ -106,10 +104,10 @@ One root module, `github.com/Neon-Genesis-Linux/pen-bot`, one binary:
 - For the database, `DATABASE_URL` wins outright; otherwise `DB_HOST`, `DB_PORT`,
   `DB_USER`, `DB_PASSWORD`, `DB_NAME` are composed, and `DB_BOT_INSTANCE_ID`
   renames the database to `pen_bot_<id>`. `POSTGRES_PASSWORD` is compose-only.
-- The compose file is `compose.yaml` (Compose v2); README's `docker-compose up`
-  is stale. Use `docker compose up`, or `docker compose watch` to honour the
-  `develop.watch` rebuild. Keep `.dockerignore` — it is what keeps `.env` and the
-  52MB `custom-gcl` out of the build context.
+- The compose file is `compose.yaml` (Compose v2); use `docker compose up`, or
+  `docker compose watch` to honour the `develop.watch` rebuild. Keep
+  `.dockerignore` — it is what keeps `.env` and the 52MB `custom-gcl` out of the
+  build context.
 
 ## Workflow
 
